@@ -41,17 +41,32 @@
 		<dependency>
 			<groupId>io.github.openfeign</groupId>
 			<artifactId>feign-okhttp</artifactId>
-			<version>10.11</version>
+<!--			<version>10.11</version>-->
+		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>io.github.openfeign</groupId>-->
+<!--			<artifactId>feign-gson</artifactId>-->
+<!--			<version>10.11</version>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>io.github.openfeign</groupId>-->
+<!--			<artifactId>feign-slf4j</artifactId>-->
+<!--			<version>10.11</version>-->
+<!--		</dependency>-->
+		<dependency>
+			<groupId>io.github.openfeign.form</groupId>
+			<artifactId>feign-form</artifactId>
+			<version>3.8.0</version>
 		</dependency>
 		<dependency>
-			<groupId>io.github.openfeign</groupId>
-			<artifactId>feign-gson</artifactId>
-			<version>10.11</version>
+			<groupId>io.github.openfeign.form</groupId>
+			<artifactId>feign-form-spring</artifactId>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpmime -->
 		<dependency>
-			<groupId>io.github.openfeign</groupId>
-			<artifactId>feign-slf4j</artifactId>
-			<version>10.11</version>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpmime</artifactId>
+			<version>4.5.13</version>
 		</dependency>
 
 	</dependencies>
