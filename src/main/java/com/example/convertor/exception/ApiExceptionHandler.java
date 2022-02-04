@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ControllerAdvice
 public class ApiExceptionHandler {
 
-    @ExceptionHandler(RuntimeException.class)
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public ResponseEntity<ApiError> onRuntimeException(RuntimeException ex) {
-        ApiError apiError = new ApiError(HttpStatus.INTERNAL_SERVER_ERROR, "Internal Server Error", ex);
-        return buildResponseEntity(apiError);
-    }
+//    @ExceptionHandler(RuntimeException.class)
+//    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+//    public ResponseEntity<ApiError> onRuntimeException(RuntimeException ex) {
+//        ApiError apiError = new ApiError(HttpStatus.INTERNAL_SERVER_ERROR, "Internal Server Error", ex);
+//        return buildResponseEntity(apiError);
+//    }
 
     @ExceptionHandler(NotValidParameter.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
@@ -36,6 +36,13 @@ public class ApiExceptionHandler {
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ResponseEntity<ApiError> onFeignException(FeignException ex) {
         ApiError apiError = new ApiError(HttpStatus.INTERNAL_SERVER_ERROR, "Internal Server Error", ex);
+        return buildResponseEntity(apiError);
+    }
+
+    @ExceptionHandler(RuntimeException .class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ResponseEntity<ApiError> onNumberFormatException(NumberFormatException ex) {
+        ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST, "Amount format is not accepted", ex);
         return buildResponseEntity(apiError);
     }
 
