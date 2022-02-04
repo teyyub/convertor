@@ -1,2 +1,2 @@
 "#convertor"
-https://github.com/eugenp/tutorials/tree/master/spring-cloud/spring-cloud-openfeign/src
+http://localhost:8989/swagger-ui/index.html
