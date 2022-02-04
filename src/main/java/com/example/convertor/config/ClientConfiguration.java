@@ -1,14 +1,11 @@
 package com.example.convertor.config;
 
-import feign.RequestInterceptor;
-import feign.auth.BasicAuthRequestInterceptor;
 import feign.codec.ErrorDecoder;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import feign.Logger;
 import feign.okhttp.OkHttpClient;
-import org.apache.http.entity.ContentType;
 
 @Configuration
 public class ClientConfiguration {
