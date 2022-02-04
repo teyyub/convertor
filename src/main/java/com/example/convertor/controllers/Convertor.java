@@ -29,4 +29,8 @@ public class Convertor {
         return service.convert(amount,source.toUpperCase(),target.toUpperCase());
     }
 
+    @GetMapping("/available")
+    public ResponseEntity<?> available(){
+        return service.availableRate();
+    }
 }

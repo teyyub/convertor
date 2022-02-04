@@ -2,7 +2,7 @@ package com.example.convertor.feign.client;
 
 import com.example.convertor.config.ClientConfiguration;
 import com.example.convertor.config.JSONRatesFallback;
-import com.example.convertor.feign.model.FooData;
+import com.example.convertor.feign.model.RateData;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -13,6 +13,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public interface JSONRatesClient {
 
     @GetMapping
-    FooData getRate();
+    RateData getRate();
 
 }

@@ -2,7 +2,7 @@ package com.example.convertor.services;
 
 import com.example.convertor.exception.NotValidParameter;
 import com.example.convertor.feign.client.JSONRatesClient;
-import com.example.convertor.feign.model.FooData;
+import com.example.convertor.feign.model.RateData;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -20,8 +20,8 @@ public class ConvertorService {
 
     public ResponseEntity<?> convert(BigDecimal amount , String source, String target){
         BigDecimal result =  new BigDecimal(0);
-        FooData fooData = ratesClient.getRate();
-        Map<String,BigDecimal> rates = fooData.getRates();
+        RateData rateData = ratesClient.getRate();
+        Map<String,BigDecimal> rates = rateData.getRates();
         BigDecimal sourceValue = rates.get(source);
         BigDecimal targetValue = rates.get(target);
         if(amount.compareTo(BigDecimal.ZERO)<0)
@@ -32,5 +32,8 @@ public class ConvertorService {
             result =  amount.multiply(targetValue.divide(sourceValue,8, RoundingMode.CEILING));
         }
         return ResponseEntity.ok(result);
+    }
+    public ResponseEntity<?> availableRate(){
+      return  ResponseEntity.ok(ratesClient.getRate().getRates().keySet()) ;
     }
 }

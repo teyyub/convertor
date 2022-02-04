@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.util.Map;
 
 @Data
-public class FooData {
+public class RateData {
     private boolean success;
     private String base;
     @JsonIgnore

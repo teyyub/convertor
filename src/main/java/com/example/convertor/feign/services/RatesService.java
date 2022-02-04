@@ -1,8 +1,8 @@
 package com.example.convertor.feign.services;
 
-import com.example.convertor.feign.model.FooData;
+import com.example.convertor.feign.model.RateData;
 
 public interface RatesService {
 
-    FooData getRate();
+    RateData getRate();
 }

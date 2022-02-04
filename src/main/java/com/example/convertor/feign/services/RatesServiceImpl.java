@@ -1,7 +1,7 @@
 package com.example.convertor.feign.services;
 
 import com.example.convertor.feign.client.JSONRatesClient;
-import com.example.convertor.feign.model.FooData;
+import com.example.convertor.feign.model.RateData;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,7 +16,7 @@ public class RatesServiceImpl implements RatesService {
     }
 
     @Override
-    public FooData getRate() {
+    public RateData getRate() {
         return ratesClient.getRate();
     }
 }
