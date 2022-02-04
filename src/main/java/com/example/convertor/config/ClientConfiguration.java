@@ -25,17 +25,4 @@ public class ClientConfiguration {
         return new OkHttpClient();
     }
 
-//    @Bean
-//    public RequestInterceptor requestInterceptor() {
-//        return requestTemplate -> {
-//            requestTemplate.header("user", "ajeje");
-//            requestTemplate.header("password", "brazof");
-//            requestTemplate.header("Accept", ContentType.APPLICATION_JSON.getMimeType());
-//        };
-//    }
-
-    // @Bean - uncomment to use this interceptor and remove @Bean from the requestInterceptor()
-//    public BasicAuthRequestInterceptor basicAuthRequestInterceptor() {
-//        return new BasicAuthRequestInterceptor("ajeje", "brazof");
-//    }
 }

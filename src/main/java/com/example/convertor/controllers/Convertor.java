@@ -18,7 +18,7 @@ public class Convertor {
     }
 
 
-    @Operation(summary = "API Description", description = "\"API which receives it will get three inputs:\n" +
+    @Operation(summary = "API Description", description = "\"API which receives three inputs:\n" +
             "    A source currency" +
             "    A target currency " +
             "    A monetary value. For example source AZN target TRY amount 20")
