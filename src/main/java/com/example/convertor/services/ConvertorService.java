@@ -19,6 +19,7 @@ public class ConvertorService {
     }
 
     public ResponseEntity<?> convert(BigDecimal amount , String source, String target){
+        BigDecimal result =  new BigDecimal(0);
         FooData fooData = ratesClient.getRate();
         Map<String,BigDecimal> rates = fooData.getRates();
         BigDecimal sourceValue = rates.get(source);
@@ -26,9 +27,10 @@ public class ConvertorService {
         if(amount.compareTo(BigDecimal.ZERO)<0)
             throw  new NotValidParameter("Amount not valid");
         if(sourceValue ==null) throw  new NotValidParameter("Source value not valid");
-        if(target ==null) throw  new NotValidParameter("Target value not valid");
-
-        BigDecimal result =  amount.multiply(targetValue.divide(sourceValue,8, RoundingMode.CEILING));
+        if(targetValue ==null) throw  new NotValidParameter("Target value not valid");
+        if (!amount.equals(BigDecimal.ZERO)){
+            result =  amount.multiply(targetValue.divide(sourceValue,8, RoundingMode.CEILING));
+        }
         return ResponseEntity.ok(result);
     }
 }
